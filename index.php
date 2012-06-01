@@ -7,6 +7,8 @@ define("APP_DIR", BASE_DIR . "app/");
 define("THEME_DIR", BASE_DIR . "themes/default/");
 define("TEMPLATE_DIR", THEME_DIR . "templates/");
 
+@require("config.php");
+
 @require(APP_DIR . "classes/class.page.php");
 @require(APP_DIR . "classes/class.mustache.php");
 @require(APP_DIR . "classes/class.db.php");
@@ -45,7 +47,7 @@ if(class_exists($controller)){
 }
 
 // Page title and prefix
-$page->setTitle("sideburns");
+$page->setTitle($config["site"]["title"]);
 $page->setPrefix($page->getPrefix());
 
 if(method_exists($page, "_pageStart")){
