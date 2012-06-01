@@ -1,0 +1,6 @@
+Options -Indexes
+RewriteEngine on
+RewriteCond $1 !^(index\.php|media|themes|robots\.txt)
+RewriteBase /
+RewriteRule ^([^/.]+)/([^/.]+)/?$ index.php?controller=$1&action=$2 [L]
+RewriteRule ^([^/.]+)/?$ index.php?controller=$1&action=index [L]
